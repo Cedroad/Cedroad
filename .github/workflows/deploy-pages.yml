@@ -1,5 +1,5 @@
 # Deploy the Vite build to GitHub Pages
-# https://cedroad.github.io/Cedroad/
+# https://cedroad.com/ (custom domain root)
 #
 # Required once in the repo:
 #   Settings → Pages → Source: GitHub Actions
@@ -40,8 +40,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Project Pages URL is /Cedroad/ — use VITE_BASE=/ when moving to a custom domain root
-          VITE_BASE: /Cedroad/
+          # Custom domain serves at site root (cedroad.com), not /Cedroad/
+          VITE_BASE: /
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

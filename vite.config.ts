@@ -3,10 +3,10 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 
-// GitHub project Pages: https://cedroad.github.io/Cedroad/
-// Override with VITE_BASE=/ for a custom-domain root (cedroad.com).
+// Custom domain root: https://cedroad.com/
+// Override with VITE_BASE=/Cedroad/ only if serving from project Pages without a custom domain.
 export default defineConfig({
-  base: process.env.VITE_BASE || '/Cedroad/',
+  base: process.env.VITE_BASE || '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
