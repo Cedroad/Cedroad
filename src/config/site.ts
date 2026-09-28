@@ -14,14 +14,14 @@ export const SITE = {
 export const LINKS = {
   /** Placeholder until the Play listing is public */
   playStore: 'https://play.google.com/store',
-  privacyPolicy: 'https://cedroad.github.io/never-have-i-ever-legal/',
-  supportEmail: 'cedroadapps@gmail.com',
-  supportMailto: 'mailto:cedroadapps@gmail.com',
+  supportEmail: 'neverhaveiever@cedroad.com',
+  supportMailto: 'mailto:neverhaveiever@cedroad.com',
   contactEmail: 'contact@cedroad.com',
   contactMailto: 'mailto:contact@cedroad.com',
   redbubble: 'https://www.redbubble.com/people/cedroad/shop',
   /** Relative to Vite `base` (use with `assetUrl`). */
   nhiePath: 'never-have-i-ever/',
+  privacyPolicy: 'never-have-i-ever-privacy-policy/',
   githubOrg: 'https://github.com/Cedroad',
 } as const
 

@@ -1,5 +1,5 @@
 import { CTA } from '@/config/content'
-import { LINKS, SITE } from '@/config/site'
+import { LINKS, SITE, assetUrl } from '@/config/site'
 import { GooglePlayBadge } from '@/components/GooglePlayBadge'
 import { Reveal } from '@/components/Reveal'
 
@@ -36,15 +36,13 @@ export function Footer() {
     <footer className="site-footer">
       <div className="section__inner site-footer__inner">
         <p className="site-footer__copy">
-          © {year} {SITE.brand}. {SITE.productName}. All rights reserved.
+          © {year} {SITE.brand}. All rights reserved.
         </p>
         <nav className="site-footer__nav" aria-label="Footer">
           <a href={LINKS.playStore} target="_blank" rel="noopener noreferrer">
             Google Play
           </a>
-          <a href={LINKS.privacyPolicy} target="_blank" rel="noopener noreferrer">
-            Privacy Policy
-          </a>
+          <a href={assetUrl(LINKS.privacyPolicy)}>Privacy Policy</a>
           <a href={LINKS.supportMailto}>Support</a>
         </nav>
       </div>

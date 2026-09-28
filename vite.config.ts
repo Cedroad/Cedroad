@@ -19,6 +19,9 @@ export default defineConfig({
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
         nhie: fileURLToPath(new URL('./never-have-i-ever/index.html', import.meta.url)),
         nhieLegacy: fileURLToPath(new URL('./never_have_i_ever/index.html', import.meta.url)),
+        privacy: fileURLToPath(
+          new URL('./never-have-i-ever-privacy-policy/index.html', import.meta.url),
+        ),
       },
     },
   },
