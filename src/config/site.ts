@@ -20,7 +20,8 @@ export const LINKS = {
   contactEmail: 'contact@cedroad.com',
   contactMailto: 'mailto:contact@cedroad.com',
   redbubble: 'https://www.redbubble.com/people/cedroad/shop',
-  nhiePath: '/never-have-i-ever/',
+  /** Relative to Vite `base` (use with `assetUrl`). */
+  nhiePath: 'never-have-i-ever/',
   githubOrg: 'https://github.com/Cedroad',
 } as const
 
@@ -38,7 +39,7 @@ export const ASSETS = {
   },
 } as const
 
-/** Resolve a public asset against Vite `base`. */
+/** Resolve a public asset or in-site path against Vite `base`. */
 export function assetUrl(path: string): string {
   const base = import.meta.env.BASE_URL
   return `${base}${path.replace(/^\//, '')}`

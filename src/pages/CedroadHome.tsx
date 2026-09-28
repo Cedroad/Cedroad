@@ -59,7 +59,7 @@ export function CedroadHome() {
           </header>
 
           <div className="home-tiles">
-            <a className="home-tile" href={LINKS.nhiePath}>
+            <a className="home-tile" href={assetUrl(LINKS.nhiePath)}>
               <span className="home-tile__media">
                 <img
                   className="home-tile__logo"
