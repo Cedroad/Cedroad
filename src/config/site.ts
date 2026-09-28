@@ -3,7 +3,7 @@
 export const SITE = {
   brand: 'Cedroad',
   productName: 'Never Have I Ever',
-  title: 'Never Have I Ever - The Ultimate Party Game by Cedroad',
+  title: 'Never Have I Ever - The Ultimate Party Game',
   description:
     'Never Have I Ever by Cedroad - the ultimate Android party game for friends, nights out, and spontaneous game nights.',
   url: 'https://cedroad.com/never-have-i-ever/',
