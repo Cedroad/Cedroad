@@ -1,0 +1,3 @@
+# Drop game screenshots here (PNG/WebP).
+# Suggested names: screen-01.webp, screen-02.webp, …
+# Aim for phone-frame crops matching Play Console assets when possible.

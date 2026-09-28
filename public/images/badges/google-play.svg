@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 250" role="img" aria-label="Get it on Google Play">
+  <title>Get it on Google Play</title>
+  <rect width="780" height="250" rx="36" fill="#000"/>
+  <rect x="10" y="10" width="760" height="230" rx="28" fill="none" stroke="#fff" stroke-width="6"/>
+  <!-- Play triangle mark -->
+  <path fill="#00F076" d="M115 70l130 55-130 55V70z"/>
+  <path fill="#FFD200" d="M115 180l75-40 55-15-130 55z" opacity=".9"/>
+  <path fill="#FF3A44" d="M115 70l75 40-75 40V70z" opacity=".85"/>
+  <path fill="#00A0FF" d="M245 125l-55 15 55 25v-40z"/>
+  <text x="285" y="108" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="40" letter-spacing="2">GET IT ON</text>
+  <text x="285" y="175" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="700">Google Play</text>
+</svg>
