@@ -29,7 +29,7 @@ export function CtaBand() {
   )
 }
 
-export function Footer() {
+export function Footer({ showPrivacyPolicy = true }: { showPrivacyPolicy?: boolean }) {
   const year = new Date().getFullYear()
 
   return (
@@ -42,7 +42,9 @@ export function Footer() {
           <a href={LINKS.playStore} target="_blank" rel="noopener noreferrer">
             Google Play
           </a>
-          <a href={assetUrl(LINKS.privacyPolicy)}>Privacy Policy</a>
+          {showPrivacyPolicy ? (
+            <a href={assetUrl(LINKS.privacyPolicy)}>Privacy Policy</a>
+          ) : null}
           <a href={LINKS.supportMailto}>Support</a>
         </nav>
       </div>

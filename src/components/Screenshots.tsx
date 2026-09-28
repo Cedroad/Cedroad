@@ -90,9 +90,10 @@ export function Screenshots() {
                       <img
                         src={assetUrl(src)}
                         alt={shot.alt}
-                        width={280}
-                        height={560}
+                        width={1080}
+                        height={2340}
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </div>

@@ -1,6 +1,8 @@
 import { ASSETS, SITE, assetUrl } from '@/config/site'
-import { HERO } from '@/config/content'
+import { HERO, SCREENSHOTS } from '@/config/content'
 import { GooglePlayBadge } from '@/components/GooglePlayBadge'
+
+const HERO_SHOT = SCREENSHOTS[0]
 
 export function Hero() {
   return (
@@ -37,10 +39,12 @@ export function Hero() {
           <div className="phone phone--hero">
             <div className="phone__bezel">
               <img
-                src={assetUrl(ASSETS.screenshots.gameplay)}
-                alt="Never Have I Ever gameplay - Confessions card on screen"
-                width={360}
-                height={720}
+                src={assetUrl(ASSETS.screenshots[HERO_SHOT.srcKey])}
+                alt={HERO_SHOT.alt}
+                width={1080}
+                height={2340}
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
             <div className="phone__glow" aria-hidden="true" />

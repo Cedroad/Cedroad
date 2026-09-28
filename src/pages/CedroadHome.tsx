@@ -55,7 +55,6 @@ export function CedroadHome() {
         <div className="home-page__inner">
           <header className="home-brand">
             <p className="home-brand__name">{SITE.brand}</p>
-            <p className="home-brand__tag">Apps &amp; merch</p>
           </header>
 
           <div className="home-tiles">
@@ -122,7 +121,7 @@ export function CedroadHome() {
           </div>
         </div>
 
-        <Footer />
+        <Footer showPrivacyPolicy={false} />
       </main>
     </div>
   )

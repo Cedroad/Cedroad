@@ -31,11 +31,11 @@ export const ASSETS = {
   merchBanner: 'images/merch-banner.jpg',
   googlePlayBadge: 'images/badges/google-play.svg',
   screenshots: {
-    gameplay: 'images/screenshots/gameplay-card.jpg',
-    questions: 'images/screenshots/onboarding-questions.jpg',
-    categoriesOnboarding: 'images/screenshots/onboarding-categories.jpg',
-    swipe: 'images/screenshots/onboarding-swipe.jpg',
-    categories: 'images/screenshots/categories.jpg',
+    gameplay: 'images/Screenshot_20260918_000224.jpg',
+    questions: 'images/Screenshot_20260918_000836.jpg',
+    categoriesOnboarding: 'images/Screenshot_20260918_000317.jpg',
+    swipe: 'images/Screenshot_20260918_000325.jpg',
+    categories: 'images/Screenshot_20260918_000427.jpg',
   },
 } as const
 

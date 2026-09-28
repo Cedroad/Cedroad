@@ -15,6 +15,7 @@
   --line: rgba(212, 191, 255, 0.14);
   --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body: 'Outfit', 'Segoe UI', sans-serif;
+  --font-glitch: 'Rubik Glitch', 'Segoe UI', sans-serif;
   --radius: 1.25rem;
   --nav-h: 4.25rem;
   --section-h: 900px;
@@ -677,14 +678,6 @@ p {
   .phone--hero .phone__bezel {
     margin-top: 15px;
   }
-
-  /*
-   * Glow container reaches the Play button (grid gap + bezel offset).
-   * Do not shrink this — tight insets clip the blur.
-   */
-  .phone--hero .phone__glow {
-    --phone-glow-top: calc(2.5rem + 15px);
-  }
 }
 
 @media (min-width: 900px) {
@@ -851,13 +844,27 @@ p {
 
 .phone--hero {
   width: min(100%, 300px);
-  isolation: isolate;
   overflow: visible;
+  /* Slight bob — translate only (keeps screenshot on a stable layer) */
+  animation: phone-bob 3.8s ease-in-out infinite;
+}
+
+@keyframes phone-bob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
 }
 
 .phone--hero .phone__bezel {
   position: relative;
   z-index: 1;
+  /* Own compositor layer — keep screenshot sharp while the phone bobs */
+  transform: translateZ(0);
+  backface-visibility: hidden;
   /* Glow range capped at ≤35px */
   box-shadow:
     0 24px 60px rgba(0, 0, 0, 0.55),
@@ -881,9 +888,12 @@ p {
 }
 
 .phone__bezel img {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: 1.5rem;
-  aspect-ratio: 9 / 19;
+  /* Match uploaded screenshots (1080×2340) — old 9/19 forced cover-crop resampling */
+  aspect-ratio: 1080 / 2340;
   object-fit: cover;
   object-position: top center;
 }
@@ -897,44 +907,27 @@ p {
 }
 
 .phone--hero .phone__glow {
-  /*
-   * Container: full viewport width; top reaches Play button on mobile.
-   * Do not shrink the box or blur clips.
-   */
-  --phone-glow-top: 35px;
-  top: calc(-1 * var(--phone-glow-top));
-  bottom: -35px;
-  left: calc(50% - 50vw);
-  width: 100vw;
-  right: auto;
+  /* Soft rounded-rect halo matching the phone mockup (all breakpoints) */
+  top: -28px;
+  right: -28px;
+  bottom: -28px;
+  left: -28px;
+  width: auto;
+  border-radius: 2.75rem;
+  /* Intensity reduced 30% vs the desktop baseline; fades slightly darker top → bottom */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.176) 0%,
+    rgba(255, 255, 255, 0.154) 45%,
+    rgba(232, 224, 255, 0.112) 75%,
+    rgba(212, 191, 255, 0.077) 100%
+  );
+  box-shadow:
+    0 0 28px rgba(255, 255, 255, 0.084),
+    0 0 56px rgba(212, 191, 255, 0.112);
   z-index: 0;
-  /* Wide ellipse so the glow reaches the screen edges */
-  background: radial-gradient(
-    ellipse 50vw 35px at 50% calc(var(--phone-glow-top) + 18%),
-    rgba(255, 255, 255, 0.187) 0%,
-    rgba(255, 255, 255, 0.101) 28%,
-    rgba(212, 191, 255, 0.13) 50%,
-    rgba(167, 139, 250, 0.08) 72%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    180deg,
-    #000 0%,
-    #000 28%,
-    rgba(0, 0, 0, 0.55) 55%,
-    rgba(0, 0, 0, 0.18) 78%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    180deg,
-    #000 0%,
-    #000 28%,
-    rgba(0, 0, 0, 0.55) 55%,
-    rgba(0, 0, 0, 0.18) 78%,
-    transparent 100%
-  );
-  filter: blur(10px);
-  opacity: 1;
+  pointer-events: none;
+  filter: blur(22px);
 }
 
 /* —— Concept / How to play —— */
@@ -1495,22 +1488,15 @@ main.home-page {
 }
 
 .home-brand__name {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 7vw, 3.5rem);
-  font-weight: 700;
+  font-family: var(--font-glitch);
+  font-size: clamp(4.8rem, 14vw, 7rem);
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1;
   background: linear-gradient(120deg, #fff 28%, var(--lavender) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.home-brand__tag {
-  margin-top: 0.55rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
 }
 
 .home-tiles {
@@ -1834,6 +1820,7 @@ main.legal-page {
   .reveal,
   .hero__copy,
   .hero__visual,
+  .phone--hero,
   .cat-spotlight__card,
   .gallery__slide,
   .home-brand,
