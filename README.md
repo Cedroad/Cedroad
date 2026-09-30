@@ -43,7 +43,7 @@ npm run preview
 
 ## Notes
 
-- Play Store link is currently `https://play.google.com/store` (closed testing). Swap in `src/config/site.ts` when the listing is public.
+- Play Store link points at the live listing in `src/config/site.ts` (URL is stable from closed testing through production).
 - Vite `base` is `/never_have_i_ever/` for the custom-domain subpath.
 - Replace `public/images/badges/google-play.svg` with an [official badge](https://play.google.com/intl/en_us/badges/) before launch if required by Google branding.
 - Optional: add a true 1200×630 `og-share.png` for richer social previews (OG currently uses the logo).

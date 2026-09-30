@@ -12,8 +12,8 @@ export const SITE = {
 } as const
 
 export const LINKS = {
-  /** Placeholder until the Play listing is public */
-  playStore: 'https://play.google.com/store',
+  playStore:
+    'https://play.google.com/store/apps/details?id=com.never_have_i_ever_party_game',
   supportEmail: 'neverhaveiever@cedroad.com',
   supportMailto: 'mailto:neverhaveiever@cedroad.com',
   contactEmail: 'contact@cedroad.com',
@@ -28,7 +28,6 @@ export const LINKS = {
 export const ASSETS = {
   logo: 'images/logo.png',
   brandLogo: 'images/Redbubble-Icon-Logo-Vector.svg-.png',
-  merchBanner: 'images/merch-banner.jpg',
   googlePlayBadge: 'images/badges/google-play.svg',
   screenshots: {
     gameplay: 'images/Screenshot_20260918_000224.jpg',
